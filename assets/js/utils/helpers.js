@@ -3,6 +3,21 @@
 // ========================================
 
 const Helpers = {
+    // Get base path for GitHub Pages compatibility
+    getBasePath() {
+        const path = window.location.pathname;
+        // Check if we're on GitHub Pages (path contains repo name)
+        if (path.includes('/H-G---Handmade-Goods-eCommerce-Website')) {
+            return '/H-G---Handmade-Goods-eCommerce-Website';
+        }
+        return '';
+    },
+
+    // Get data path for fetching JSON files
+    getDataPath(filename) {
+        return `${this.getBasePath()}/assets/data/${filename}`;
+    },
+
     // Format price to currency
     formatPrice(price) {
         return `$${parseFloat(price).toFixed(2)}`;

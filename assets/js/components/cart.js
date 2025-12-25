@@ -25,8 +25,9 @@ const Cart = {
 
     // Add item to cart
     addItem(productId, quantity = 1, options = {}) {
-        // Find product in data
-        fetch('../assets/data/products.json')
+        // Find product in data - use helper for GitHub Pages compatibility
+        const dataPath = Helpers.getDataPath('products.json');
+        fetch(dataPath)
             .then(response => response.json())
             .then(data => {
                 const product = data.products.find(p => p.id === productId);

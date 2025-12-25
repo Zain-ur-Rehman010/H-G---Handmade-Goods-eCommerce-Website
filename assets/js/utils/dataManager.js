@@ -189,9 +189,11 @@ const DataManager = {
     },
 
     // Load snapshot from project file
-    async loadSnapshot(url = '../assets/data/snapshot.json') {
+    async loadSnapshot(url = null) {
         try {
-            const response = await fetch(url);
+            // Use helper for GitHub Pages compatibility if no URL provided
+            const snapshotUrl = url || Helpers.getDataPath('snapshot.json');
+            const response = await fetch(snapshotUrl);
             if (!response.ok) throw new Error('Snapshot not found');
             
             const data = await response.json();

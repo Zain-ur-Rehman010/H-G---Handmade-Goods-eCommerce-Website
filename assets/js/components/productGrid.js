@@ -19,8 +19,10 @@ const ProductGrid = {
     // Load products from JSON
     async loadProducts() {
         try {
-            // Try multiple paths for different page locations
+            // Use helper to get correct path for GitHub Pages
+            const basePath = Helpers.getBasePath();
             const paths = [
+                `${basePath}/assets/data/products.json`,
                 '../assets/data/products.json',
                 './assets/data/products.json',
                 'assets/data/products.json'
