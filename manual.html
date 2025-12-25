@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mioca eCommerce - Project Home</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/images/favicon.svg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f7f8fa;
+            background-image: 
+                radial-gradient(at 20% 30%, rgba(212, 165, 116, 0.05) 0px, transparent 50%),
+                radial-gradient(at 80% 70%, rgba(232, 179, 132, 0.05) 0px, transparent 50%),
+                radial-gradient(at 50% 50%, rgba(44, 62, 80, 0.02) 0px, transparent 50%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            max-width: 900px;
+            width: 100%;
+            padding: 50px;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: #6b7280;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .status {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #d4a574 0%, #c89563 100%);
+            padding: 25px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+            text-align: center;
+            border: none;
+            box-shadow: 0 4px 12px rgba(212, 165, 116, 0.2);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(212, 165, 116, 0.35);
+            background: linear-gradient(135deg, #e8b384 0%, #d4a574 100%);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .features {
+            background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .features h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .features ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .features li {
+            padding: 10px 14px;
+            background: white;
+            border-radius: 8px;
+            color: #4b5563;
+            font-size: 0.95rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+            transition: all 0.2s ease;
+        }
+
+        .features li:hover {
+            transform: translateX(4px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+        }
+
+        .features li::before {
+            content: "✅ ";
+        }
+
+        .docs-section {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 2px solid #e5e7eb;
+        }
+
+        .docs-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .doc-link {
+            background: white;
+            padding: 14px 24px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #d4a574;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid #f3f4f6;
+            display: inline-block;
+        }
+
+        .doc-link:hover {
+            background: #d4a574;
+            color: white;
+            border-color: #d4a574;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(212, 165, 116, 0.25);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #f3f4f6;
+            color: #6b7280;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 30px 20px;
+            }
+
+            .card {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🛍️ H&G Handmade Goods</h1>
+        <p class="subtitle">Complete eCommerce Website Template - Version 1.0.0</p>
+        <div class="status">✅ Production Ready</div>
+
+        <div class="features">
+            <h3>✨ What's Included</h3>
+            <ul>
+                <li>28 Unique Products</li>
+                <li>4 Product Categories</li>
+                <li>Shopping Cart System</li>
+                <li>Wishlist Management</li>
+                <li>User Authentication</li>
+                <li>Product Quick View</li>
+                <li>Advanced Filtering</li>
+                <li>Search Functionality</li>
+                <li>Mobile Responsive</li>
+                <li>Checkout Process</li>
+                <li>Newsletter Signup</li>
+                <li>Blog Section</li>
+            </ul>
+        </div>
+
+        <h3 style="margin-bottom: 15px; color: #333;">📄 Pages (9 Total)</h3>
+        <div class="grid">
+            <a href="pages/index.html" class="card">
+                <div class="card-icon">🏠</div>
+                <div class="card-title">Homepage</div>
+                <div class="card-desc">Hero Slider & Features</div>
+            </a>
+
+            <a href="pages/shop.html" class="card">
+                <div class="card-icon">🛒</div>
+                <div class="card-title">Shop</div>
+                <div class="card-desc">28 Products Catalog</div>
+            </a>
+
+            <a href="pages/product-detail.html?id=1" class="card">
+                <div class="card-icon">📦</div>
+                <div class="card-title">Product Detail</div>
+                <div class="card-desc">Product Gallery & Info</div>
+            </a>
+
+            <a href="pages/cart.html" class="card">
+                <div class="card-icon">🛍️</div>
+                <div class="card-title">Shopping Cart</div>
+                <div class="card-desc">Cart & Suggestions</div>
+            </a>
+
+            <a href="pages/checkout.html" class="card">
+                <div class="card-icon">💳</div>
+                <div class="card-title">Checkout</div>
+                <div class="card-desc">Payment & Billing</div>
+            </a>
+
+            <a href="pages/wishlist.html" class="card">
+                <div class="card-icon">❤️</div>
+                <div class="card-title">Wishlist</div>
+                <div class="card-desc">Saved Products</div>
+            </a>
+
+            <a href="pages/about.html" class="card">
+                <div class="card-icon">ℹ️</div>
+                <div class="card-title">About Us</div>
+                <div class="card-desc">Brand Story & Team</div>
+            </a>
+
+            <a href="pages/contact.html" class="card">
+                <div class="card-icon">📧</div>
+                <div class="card-title">Contact</div>
+                <div class="card-desc">Get In Touch</div>
+            </a>
+
+            <a href="pages/blog.html" class="card">
+                <div class="card-icon">📝</div>
+                <div class="card-title">Blog</div>
+                <div class="card-desc">Articles & News</div>
+            </a>
+        </div>
+
+        <div class="docs-section">
+            <h3 style="margin-bottom: 15px; color: #333;">📚 Documentation</h3>
+            <div class="docs-links">
+                <a href="USER_MANUAL.md" class="doc-link">📖 User Manual</a>
+                <a href="QUICKSTART.md" class="doc-link">⚡ Quick Start</a>
+                <a href="SETUP.md" class="doc-link">🔧 Setup Guide</a>
+                <a href="PROJECT_SUMMARY.md" class="doc-link">📊 Project Summary</a>
+                <a href="ARCHITECTURE.md" class="doc-link">🏗️ Architecture</a>
+                <a href="README.md" class="doc-link">📄 README</a>
+            </div>
+        </div>
+
+        <div class="features" style="margin-top: 30px;">
+            <h3>🛠️ Technology Stack</h3>
+            <ul>
+                <li>HTML5 (Semantic)</li>
+                <li>Bootstrap 5.3+</li>
+                <li>SCSS/CSS3</li>
+                <li>JavaScript ES6+</li>
+                <li>LocalStorage API</li>
+                <li>Font Awesome 6</li>
+                <li>Unsplash Images</li>
+                <li>Mobile-First Design</li>
+            </ul>
+        </div>
+
+        <div class="docs-section">
+            <h3 style="margin-bottom: 15px; color: #333;">🚀 Quick Start</h3>
+            <div style="background: #f9fafb; padding: 20px; border-radius: 8px; font-family: 'Courier New', monospace; font-size: 0.9rem;">
+                <p style="margin-bottom: 10px; color: #666;"><strong>1. Install Dependencies:</strong></p>
+                <code style="background: white; padding: 8px 12px; border-radius: 4px; display: block; margin-bottom: 15px; color: #333;">npm install</code>
+                
+                <p style="margin-bottom: 10px; color: #666;"><strong>2. Compile SCSS (Watch Mode):</strong></p>
+                <code style="background: white; padding: 8px 12px; border-radius: 4px; display: block; margin-bottom: 15px; color: #333;">npm run sass</code>
+                
+                <p style="margin-bottom: 10px; color: #666;"><strong>3. Start Local Server:</strong></p>
+                <code style="background: white; padding: 8px 12px; border-radius: 4px; display: block; margin-bottom: 15px; color: #333;">npx http-server -p 3000</code>
+                
+                <p style="margin-bottom: 10px; color: #666;"><strong>4. Open in Browser:</strong></p>
+                <code style="background: white; padding: 8px 12px; border-radius: 4px; display: block; color: #333;">http://localhost:3000/pages/index.html</code>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Built with:</strong> Bootstrap 5.3+, SCSS, Vanilla JavaScript, LocalStorage</p>
+            <p style="margin-top: 10px;"><strong>Version:</strong> 1.0.0 | <strong>Status:</strong> Production Ready ✅</p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">© 2025 H&G Handmade Goods eCommerce Template</p>
+        </div>
+    </div>
+</body>
+</html>

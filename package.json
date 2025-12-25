@@ -1,0 +1,22 @@
+{
+  "name": "handmade-goods-ecommerce",
+  "version": "1.0.0",
+  "description": "H&G - Handmade Goods eCommerce Website",
+  "main": "index.html",
+  "scripts": {
+    "sass": "sass --watch assets/css/styles.scss:assets/css/styles.css",
+    "start": "live-server --port=3000"
+  },
+  "keywords": [
+    "ecommerce",
+    "template",
+    "handmade",
+    "bootstrap",
+    "scss"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.97.1"
+  }
+}
